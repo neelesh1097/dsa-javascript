@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>direct recursion</title>
+</head>
+
+<body>
+    <h1>direct recurssion</h1>
+    <h1>print factorial using recurssion</h1>
+</body>
+
+<script>
+    // function factorial() {
+    //     console.warn("called");
+    //     factorial();
+    // calls the function infinitely
+    // }
+    // // factorial()
+
+    function apple(x) {
+        console.warn(x);
+        if (x < 10) {
+            apple(x + 1);
+        }
+    }
+    let data = 0;
+    apple(data);
+
+    //factorial of a number using direct recurssion
+    //way1
+
+    function factorial(n) {
+        // console.log(n); // Log the value of n during each recursion
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    let data1 = 5;
+    console.log(factorial(data1));
+
+    //another way to write factorial using direct recurssion
+
+    function factorial(n) {
+        console.log(n); // Log the value of n during each recursion
+        if (n > 0) {
+            return n * factorial(n - 1);
+        }
+        else {
+            return 1;
+        }
+    }
+
+    let data2 = 5;
+    console.log(factorial(data2));
+
+
+
+
+</script>
+
+</html>

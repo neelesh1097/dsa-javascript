@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack using class</title>
+
+</head>
+
+<body>
+    <h1>implementing stack using classes</h1>
+</body>
+<script>
+
+    class Stack {
+        data = [];
+        currentsize;
+        max;
+        constructor(size) {
+            this.max = size;
+            this.currentsize = this.data.length;
+        }
+        push(newval) {
+            if (this.currentsize >= this.max) {
+                alert("stack overflow");
+            }
+            else {
+                this.data[this.currentsize] = newval;
+                this.currentsize++;
+            }
+
+        }
+        pop() {
+            if (this.currentsize <= 0) {
+                alert("stack underflow");
+            }
+            else {
+                this.currentsize--
+                this.data.length = this.currentsize;
+
+            }
+
+        }
+        display() {
+            console.log(this.data);
+        }
+    }
+    st1 = new Stack(5)
+    // st1.push(20);
+    // st1.display();
+</script>
+
+</html>

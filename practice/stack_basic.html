@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>stack javascript </h1>
+    <p>stack is a linear data structure which follows a particular order in which the operations are performed. The
+        order may be LIFO(Last In first out) element are added or poped from one direction only</p>
+</body>
+<script>
+    let stack = [];
+    let currentSize = stack.length;
+    let max = 5;
+    function pop() {
+
+        if (currentSize <= 0) {
+            alert("stack is empty");
+        }
+    //    currentSize-= 1;
+    //    stack.length = currentSize;
+    stack.length -= 1;
+    }
+
+    function push(element) {
+
+        if (currentSize >= max) {
+            alert("stack is full" + element);
+        }
+        stack[currentSize] = element;
+        currentSize++;
+    }
+    push(30);
+    push(40);
+    push(50);
+    push(4);
+    push(65);
+    push(0);
+    pop();
+    pop();
+
+
+
+
+    console.log(stack);
+
+</script>
+
+</html>

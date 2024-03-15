@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>front and rear queue</title>
+</head>
+
+<body>
+    <h1>queue basics using arrays front and rear</h1>
+    <p>diffrence between enqueue, dequeue, front and rear is that it is enqueue is used to add while dequeue is used to
+        remove and front is used to return the frontindex value(first value in the array ) only rear is used to return
+        the lastindex value in array </p>
+
+    <input type="text" name="" id="Getinput">
+    <button onclick="enqueue()" class="enqueue">add element</button>
+    <button onclick="dequeue()" class="dequeue">remove element</button>
+    <button onclick="front()" class="front">front element</button>
+    <button onclick="rear()" class="rear">rear element</button>
+    <button onclick="display()" class="display">display</button>
+</body>
+<script>
+    let data = [];
+    let currentsize = data.length;
+    let max = 5;
+
+    function enqueue() {
+        let element = document.getElementById("Getinput").value;
+        if (currentsize < max) {
+            data[currentsize] = element;
+            currentsize++;
+            document.getElementById("Getinput").value = " ";
+
+        }
+        else {
+            alert("queue is full");
+
+        }
+    }
+
+    function dequeue() {
+
+        if (currentsize => 0) {
+
+            for (let i = 0; i < currentsize; i++) {
+                data[i] = data[i + 1];
+            }
+            currentsize--;
+            data.length = currentsize;
+
+        }
+        else {
+            alert("queue is empty");
+            return false;
+        }
+    }
+    function front() {
+        if (currentsize => 0) {
+            console.warn(data[0]);
+        }
+        else {
+            alert("queue is empty");
+            return false;
+        }
+    }
+    function rear() {
+        if (currentsize => 0) {
+            console.warn(data[currentsize - 1]);
+        }
+        else {
+            alert("queue is empty");
+            return false;
+        }
+    }
+    function display() {
+        console.log(data);
+    }
+
+
+    // enqueue(1);
+    // enqueue(12);
+    // enqueue(83);
+    // enqueue(4);
+    // enqueue(90);
+    // dequeue();
+    // dequeue();
+    // front();
+    // rear();
+    // display();
+
+</script>
+
+</html>

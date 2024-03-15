@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>reverse sring using stack</h1>
+</body>
+<script>
+  function reverseString(item) {
+    for (let i = 0; i < item.length; i++) {
+      push(item[i]);
+    }
+
+    for (let i = 0; i < item.length; i++) {
+      item[i] = pop();
+    }
+
+
+  }
+
+  let data = [];
+  let currentSize = data.length;
+  function push(newval) {
+    data[currentSize] = newval;
+    currentSize += 1;
+  }
+  function pop() {
+    let popeditem = data[currentSize - 1];
+    currentSize -= 1;
+    return popeditem;
+
+  }
+
+
+
+  let str = "anil";
+  str = str.split("");
+  reverseString(str);
+  console.log(str.join(""));
+
+</script>
+
+</html>

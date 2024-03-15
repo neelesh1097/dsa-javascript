@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print alternate element of array</title>
+</head>
+
+<body>
+    <h1>print alternate element of array</h1>
+</body>
+
+<script>
+
+    let arr6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let n6 = arr6.length;
+    let arr2 = [];
+    let k = 0;
+
+    for (let i = 0; i < n6; i++) {
+        if (i === 0 || i % 2 === 0) {
+            arr2[k] = arr6[i];
+            k++;
+        }
+    }
+
+    console.log(arr2);
+
+
+    class Solution {
+        print(arr, n) {
+
+            let s = [];
+            for (let i = 0; i < n; i++) {
+                if (i !== 1 && i % 2 == 0) {
+                    s.push(arr[i])
+                }
+            }
+            console.log(s.join(" "))
+
+        }
+    }
+    let sol = new Solution();
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const n = arr.length;
+    const result = sol.print(arr, n);
+
+    console.log(result);
+
+</script>
+
+</html>

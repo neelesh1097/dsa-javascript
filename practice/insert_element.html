@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert element in a array</title>
+
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <input type="text" id="pos" class="pos">
+    <input type="text" id="num" class="num">
+    <button class="btn">click</button>
+
+</body>
+<script>
+
+    const btn = document.querySelector(".btn").addEventListener("click", function () {
+        const txt1 = document.querySelector(".pos").value;
+        const txt2 = document.querySelector(".num").value;
+        let pos = txt1;
+        let num = txt2;
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        for (let i = arr.length - 1; i > 0; i--) {
+            if (i > pos) {
+                arr[i + 1] = arr[i]
+            }
+            if (i == pos) {
+                arr[i] = num;
+            }
+        }
+
+        document.querySelector(".pos").value = "";
+        document.querySelector(".num").value = "";
+        console.log(arr);
+
+
+    })
+
+
+    // let pos = 2;
+    // let num = 15;
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    // for (let i = 2; i < arr.length; i++) {
+    //     if (i = pos) {
+    //         arr[i] = num;
+    //     }
+    //     if (i > pos) {
+    //         arr[i] = arr[i + 1];
+    //     }
+    // }
+    // console.log(arr)
+    let pos = 2;
+    let num = 15;
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    for (let i = 2; i < arr.length -1; i++) {
+        if (i === pos) { // Use === for comparison
+            arr[i] = num;
+        }
+        if (i > pos) {
+            arr[i] = arr[i + 1]; // Corrected from arr[i + 1] to arr[i - 1]
+        }
+    }
+
+    console.log(arr);
+
+</script>
+
+</html>

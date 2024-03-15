@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear search </title>
+</head>
+
+<body>
+    <h1>Linear Search JavaScript</h1>
+    <p>30 numbers in array</p>
+    <input type="number" class="form-control" id="input" placeholder="Enter number">
+    <button onclick="search()">Submit</button>
+</body>
+<script>
+
+function search() {
+            let arr = [120, 2, 35, 44, 51, 6, 7, 86, 93, 100, 1, 12, 133, 145, 156, 164, 173, 186, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+            let k = parseInt(document.getElementById("input").value);
+            let found = false;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === k) {
+                    alert(`Found element in array at index ${i}`);
+                    found = true;
+                    break; // No need to continue searching once found
+                }
+            }
+
+            if (!found) {
+                alert("Number not found in array");
+            }
+
+            document.getElementById("input").value = "";
+        }
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate array</title>
+</head>
+
+<body>
+    <h1>rotate an number by k</h1>
+</body>
+<script>
+    let num = 12345;
+    let k = 2;
+    let originalNum = num;
+    let counter = 0;
+
+    while (num > 0) {
+        num = Math.floor(num / 10);
+        counter++;
+    }
+
+    let div = 1;
+    let mul = 1;
+    for (let i = 1; i <= counter; i++) {
+        if (i <= k) {
+            div *= 10;
+        }
+        else {
+            mul *= 10;
+        }
+
+
+    }
+    let r = originalNum % div;
+    let p = Math.floor(originalNum / div);
+
+    let u = 1;
+    u = r * mul + p;
+    console.log(u);
+
+    //     let num = 12345;
+    // let k = 2;
+    // let originalNum = num; // Store the original number for later use
+    // let counter = 0;
+
+    // while (num > 0) {
+    //     num = Math.floor(num / 10); // Use Math.floor to get integer division
+    //     counter++;
+    // }
+
+    // let div = 1;
+    // let mul = 1;
+    // for (let i = 1; i <= counter; i++) {
+    //     if (i <= k) {
+    //         div *= 10;
+    //     } else {
+    //         mul *= 10;
+    //     }
+    // }
+
+    // let r = originalNum % div;
+    // let p = Math.floor(originalNum / div); // Use Math.floor to get integer division
+
+    // let u = 0;
+    // u = r * mul + p;
+    // console.log(u);
+
+</script>
+
+</html>

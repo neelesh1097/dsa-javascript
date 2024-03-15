@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack with buttons</title>
+
+
+</head>
+
+<body>
+    <h1>Stack using buttons to add and remove element</h1>
+
+    <input type="text" id="input" placeholder="enter element">
+    <button onclick="push()">push</button>
+    <button onclick="pop()">pop</button>
+    <button onclick="peek()">peek</button>
+</body>
+<script>
+
+    let stack = [];
+    let currentSize = stack.length;
+    let max = 5;
+
+
+    function push() {
+        let element = document.getElementById("input").value;
+        if (currentSize >= max) {
+            alert("stack is full" + element);
+        }
+        stack[currentSize] = element;
+        currentSize++;
+        document.getElementById("input").value = "";
+        console.log(stack);
+
+    }
+
+    function pop() {
+
+        if (currentSize <= 0) {
+            alert("stack is empty");
+        }
+        //    currentSize-= 1;
+        //    stack.length = currentSize;
+        stack.length -= 1;
+        console.log(stack);
+    }
+
+    function peek() {
+      for(let i=0; i<stack.length; i++){
+        console.log(`the value for index ${i} is ${stack[i]}`);
+      }
+        
+    }
+
+
+
+</script>
+
+</html>

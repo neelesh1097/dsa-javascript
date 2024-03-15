@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implement enqueue and dequeue</title>
+</head>
+
+<body>
+    <h1>queue a linear data structure used to enqueue and dequeue element it is based on first in and first out
+        principal</h1>
+    <P>it is very easy to implement element can be added and removed from front and rear end respectively </P>
+</body>
+<script>
+    let data = [];
+    let currentsize = data.length;
+    let max = 5;
+
+    function enqueue(element) {
+        if (currentsize < max) {
+            data[currentsize] = element;
+            currentsize++;
+            return true;
+        }
+        else {
+            alert("queue is full");
+            return false;
+        }
+    }
+
+    function dequeue() {
+
+        if (currentsize => 0) {
+
+            for (let i = 0; i < currentsize; i++) {
+                data[i] = data[i+1];
+            }
+            currentsize--;
+            data.length = currentsize;
+
+        }
+        else {
+            alert("queue is empty");
+            return false;
+        }
+
+
+    }
+    function display() {
+        console.log(data);
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCD and LCM</title>
+</head>
+
+<body>
+    <h1>find LCM and Gcd fo given numbers</h1>
+    <input type="number" id="number1" placeholder="enter first number">
+    <input type="number" id="number2" placeholder="enter second number">
+    <button onclick="calculate()" class="submit_number">submit</button>
+
+</body>
+<script>
+  function calculate() {
+
+            let num1 = parseInt(document.querySelector("#number1").value);
+            let num2 = parseInt(document.querySelector("#number2").value);
+
+
+    let tempnum1 = num1;
+    let tempnum2 = num2;
+
+    let on1 = document.querySelector("#number1").value;;
+    let on2 = document.querySelector("#number2").value;;
+
+    while (tempnum1 % tempnum2 != 0) {
+        let rem = tempnum1 % tempnum2;
+        tempnum1 = tempnum2;
+        tempnum2 = rem;
+    }
+
+    // console.log(num2);
+
+
+    let lcm = (on1 * on2) / tempnum2;
+    console.log(lcm);
+
+    let gcd = tempnum2;
+    console.log(gcd);
+
+  }
+
+
+</script>
+
+</html>

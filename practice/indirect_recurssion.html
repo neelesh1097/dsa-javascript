@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indirect_recurssion</title>
+</head>
+
+<body>
+    <h1>indirect recurssion</h1>
+</body>
+<script>
+    // indirect recurssion
+    let juicebyPices = 10;
+    let usedPieces = 0;
+    let Fruit = "orange";
+    let glassbyml = 100;
+
+    function MakeJuice(peices, fruit) {
+
+        if (peices > 0) {
+            console.log("making juice ", usedPieces, " of this many pieces", fruit);
+            letsmakeJuice(peices);
+        }
+        else {
+            console.log("no more juice");
+        }
+    }
+
+    function letsmakeJuice(pieces) {
+        if (glassbyml <= 100) {
+
+            usedPieces++;
+            glassbyml++;
+            console.log("used pieces", usedPieces);
+        } else {
+            return
+        }
+
+    }
+    MakeJuice(juicebyPices, Fruit);
+
+
+
+    let money = 100;
+    let totalapple = 0;
+
+    function buyApple(x) {
+        console.log(x);
+        if (x > 0) {
+            console.log("buying apple", x, "rs", totalapple);
+            buyMore(x);
+
+        }
+        else {
+            console.log("no more money", totalapple);
+        }
+
+
+    }
+
+    function buyMore(x) {
+        totalapple++;
+        buyApple(x - 10);
+        // console.log("buy more");
+    }
+
+    buyApple(money);
+</script>
+
+</html>

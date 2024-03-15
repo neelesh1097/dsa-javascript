@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>reverse an array</h1>
+</body>
+<script>
+    let arr = [10, 5, 67, 87, 23, 14, 56, 9]
+    let temp;
+    let arr2=[]
+    console.log(arr2)
+
+    function reverse_array(data, start, end) {
+        while (start <= end) {
+            let temp = data[start];
+            data[start] = data[end];
+            data[end] = temp;
+            start++;
+            end--;
+        }
+        return data;
+        arr2.push(data)
+
+
+    }
+    console.log(reverse_array(arr, 0, arr.length - 1));   
+</script>
+
+</html>

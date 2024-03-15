@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete element in a array</title>
+</head>
+
+<body>
+    <h1>delete element in a array</h1>
+
+    <input type="text" id="input" class="input" placeholder="enter the element">
+    <button id="'button" class="button">click here</button>
+
+</body>
+<script>
+
+    document.querySelector(".button").addEventListener("click", () => {
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let pos = document.querySelector(".input").value;
+        pos = parseInt(pos);
+        for (let i = pos; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr.length = arr.length - 1;
+        console.log(arr);
+
+
+    })
+
+
+
+
+    // let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    // console.log(arr2.length);
+    // for (let i = 0; i < arr2.length; i++) {
+    //     console.log(arr2[i]);
+    // }
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    
+</head>
+<body>
+    <h1>check weather the number is prime on not </h1>
+</body>
+\<script>
+    function prime(num){
+        for(let i=2; i*i<num; i++){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(prime(11)); 
+</script>
+</html>

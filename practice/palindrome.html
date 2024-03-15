@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome question </title>
+</head>
+<body>
+    <h1>check  weather a string is palindrome or not </h1>
+</body>
+<script>
+    function palindrome(str){
+        let q =0;
+        let p = str.length-1;
+        while(q<=p){
+            if(str[q]!==str[p]){
+                return false;
+            }
+            q++;
+            p--;
+        }
+        return true;
+
+    }
+
+   const w = palindrome("maam");
+   console.log(w);
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array iteration basics</title>
+</head>
+
+<body>
+    <h1>day1</h1>
+    <h1>Hello World</h1>
+    <input type="text" class="input" id="input">
+    <button class="btn" id="btn">Click</button>
+</body>
+<script>
+    // arr1 = [10, 20, 30, 40, 50, 60];
+    // for (let i = 0; i < arr1.length; i++) {
+    //     document.write(`${arr1[i]}<br>`)
+
+    // }
+
+    arr2 = [10, 20, 30, 40, 50, 60];
+    const area = document.querySelector('#input');
+
+    const btn = document.querySelector('.btn').addEventListener('click', () => {
+        const val = document.querySelector('.input').value;
+        if (val <= arr2.length) {
+            alert(arr2[val])
+            area.value = '';
+        }
+        else {
+            alert('out of range');
+            return -1;
+        }
+
+
+        // console.log(`${arr2[val]}`);
+
+
+    });
+
+
+
+
+</script>
+
+</html>
