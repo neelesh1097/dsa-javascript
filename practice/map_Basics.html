@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maps in javascripit</title>
+</head>
+
+<body>
+    <h1>implement maps in javascripit</h1>
+    <p>let map = new Map //general syntax </p>
+    <p>map is just like object but there is little diffrences such as the key value of obj is alwya string but in map it
+        can be any type and => is used instead of : </p>
+</body>
+<script>
+    // let map = new Map();
+    let map = new Map([
+        ["name", "Neelesh "],
+        ["age", 21]
+    ])
+    map.set('class', "BCA");
+    map.set('hobbies', ['coding', 'playing']);
+    console.log(map.size);
+    console.log(map.get('name'));
+    console.log(map.has('hobbies'));
+    console.log(map.values());
+    console.log(map.keys());
+    console.log(map);
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anagram Question</title>
+</head>
+
+<body>
+  <h1>anagram </h1>
+  <p>check weather two string are
+    anagram or not
+  </p>
+</body>
+<script>
+  function anagram(str1, str2) {
+    if (str1.length !== str2.length) {
+      return false;
+    }
+    let str1Map = {};
+    let str2Map = {};
+
+    for (ch of str1) {
+      str1Map[ch] = str1Map[ch] + 1 || 1;
+    }
+
+    for (ch of str2) {
+      str2Map[ch] = str2Map[ch] + 1 || 1;
+    }
+
+    for (key in str1Map) {
+      console.log(key, str1Map[key], str2Map[key]);
+      if (str1Map[key] !== str2Map[key]) {
+        return false;
+        
+      }
+      else {
+        return true;
+      }
+
+    }
+
+  }
+
+  console.log(anagram("anagram", "nagaram"));
+</script>
+
+</html>

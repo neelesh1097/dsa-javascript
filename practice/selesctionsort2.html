@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>descending selection sorting </title>
+</head>
+
+<body>
+    <h1>selection sorting descending order</h1>
+</body>
+<script>
+    // let arr = [10, 2, 0, 4, 52, 7, 82, 90, 100, 1000, 1];
+
+    // function selectionSort(arr) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let min = i;
+    //         for (let j = i + 1; j < arr.length; j++) {
+    //             if (arr[j] > arr[min]) {
+    //                 min = j;
+    //             }
+    //         }
+    //         let temp = arr[i];
+    //         arr[i] = arr[j];
+    //         arr[j] = temp;
+
+    //     }
+    // }
+
+    // selectionSort(arr);
+    // console.log(arr);
+    let arr = [10, 2, 0, 4, 52, 7, 82, 90, 100, 1000, 1];
+
+    function selectionSort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            let min = i;
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[min]) {
+                    min = j;
+                }
+            }
+            let temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+    }
+
+    selectionSort(arr);
+    console.log(arr);
+
+</script>
+
+</html>

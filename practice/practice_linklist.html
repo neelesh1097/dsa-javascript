@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list</title>
+</head>
+
+<body>
+    <h1>linked list</h1>
+    <p>linked list practice - data structures and algorithms</p>
+</body>
+<script>
+   
+    // Define a list node
+function createNode(data) {
+    return {
+        data: data,
+        next: null
+    };
+}
+
+// Create a linked list
+function createLinkedList() {
+    return {
+        head: null,
+        // Add a new node to the end of the list
+        append(data) {
+            const newNode = createNode(data);
+            if (!this.head) {
+                this.head = newNode;
+            } else {
+                let current = this.head;
+                while (current.next) {
+                    current = current.next;
+                }
+                current.next = newNode;
+            }
+        },
+        // Print the linked list
+        print() {
+            let current = this.head;
+            while (current) {
+                console.log(current.data);
+                current = current.next;
+            }
+        }
+    };
+}
+
+// Example usage
+const myList = createLinkedList();
+myList.append(2);
+myList.append(5);
+myList.append(8);
+
+// Print the linked list
+myList.print();
+
+
+
+
+</script>
+
+</html>

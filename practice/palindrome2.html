@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>palindrome question</h1>
+    <p>find weahter the string is palindrome or not </p>
+</body>
+<script>
+
+    function Palindrome(str){
+        let string=str.toLowerCase();
+        let end =0;
+        let start = str.length -1;
+        while(end<start){
+              if(string[end]!==string[start]){
+                return false;
+              }
+
+              return true;
+
+        }
+    }
+
+    let str = "racecar";
+    console.log(Palindrome(str));
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list -insert node</title>
+</head>
+
+<body>
+    <h1>insert node </h1>
+    <p>inserting node in linked list</p>
+</body>
+<script>
+    class List {
+        constructor(data) {
+            this.head = {
+                value: data,
+                next: null,
+            }
+            this.tail = this.head;
+            this.size = 1;
+        }
+
+        appendNode(nodeValue) {
+            let newNode = {
+                value: nodeValue,
+                next: null,
+            }
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.size++;
+        }
+
+        insertnode(index, value) {
+            let counter = 1;
+            let currentnode = this.head;
+            while (counter < index) {
+                counter++;
+                currentnode = currentnode.next;
+            }
+            let nextNode = currentnode.next;
+            currentnode.next = {
+                value: value,
+                next: nextNode
+            }
+            this.size++;
+
+        }
+        traversing() {
+            let counter = 1;
+            let currentNode = this.head;
+            while (counter <= this.size) {
+                console.log(currentNode.value);
+                currentNode = currentNode.next;
+                counter++;
+            }
+        }
+       
+
+
+    }
+
+    let list = new List(100);
+    list.appendNode(1000);
+    list.appendNode(400);
+    list.insertnode(2, 500);
+    list.traversing();
+    console.log(list);
+</script>
+
+</html>

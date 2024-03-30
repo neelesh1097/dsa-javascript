@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max occuring element in string</title>
+</head>
+
+<body>
+    <h1>find max occuring element in a string</h1>
+</body>
+<script>
+    let maxVal = '';
+    let str1Map = {};
+    function maxOccuring(str1) {
+        for (let i = 0; i < str1.length; i++) {
+            let key = str1[i];
+            if (!str1Map[key]) {
+                str1Map[key] = 0;
+            }
+            str1Map[key]++;
+           
+
+            if (maxVal == '' || str1Map[key] > str1Map[maxVal]) {
+                maxVal = key;
+            }
+              
+        }
+        console.log(str1Map);
+        return maxVal;
+    }
+
+    console.log(maxOccuring('abccdefgh'));
+</script>
+
+</html>
