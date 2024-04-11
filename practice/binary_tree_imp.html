@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary tree</title>
+</head>
+
+<body>
+    <h1>implement a binary tree revision</h1>
+</body>
+<script>
+    class tree {
+        constructor(val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    class Bstree {
+        constructor() {
+            this.root = null;
+        }
+
+        isTreeEmpty() {
+            return this.root === null;
+        }
+
+        maketree(val) {
+            let newnode = new tree(val);
+            if (this.root === null) {
+                this.root = newnode;
+            } else {
+                this.insertnode(this.root, newnode);
+            }
+        }
+
+        insertnode(root, newnode) {
+            if (root.val > newnode.val) {
+                if (root.left === null) {
+                    root.left = newnode;
+                } else {
+                    this.insertnode(root.left, newnode);
+                }
+            } else {
+                if (root.right === null) {
+                    root.right = newnode;
+                } else {
+                    this.insertnode(root.right, newnode);
+                }
+            }
+        }
+    }
+
+    let bst1 = new Bstree();
+    console.log(bst1.isTreeEmpty());
+    bst1.maketree(20);
+    bst1.maketree(10);
+    bst1.maketree(30);
+    bst1.maketree(5);
+    console.log(bst1);
+    bst1.insertnode(bst1.root, new tree(15));
+
+    class node {
+        constructor(val) {
+            this.value = val;
+            this.left = null;
+            this.right = null;
+        }
+    }
+    class bstTree {
+        constructor() {
+            this.root = null;
+        }
+        isTreeEmpty() {
+            return this.root === null;
+        }
+
+        makeTree(val) {
+            let newnode = new node(val);
+            if (this.root === null) {
+                this.root = newnode;
+            }
+            else {
+                this.insertnode(this.root, newnode);
+            }
+        }
+
+
+        insertnode(root, newnode) {
+            if (newnode.value < root.value) {
+                if (root.left === null) {
+                    root.left = newnode;
+                }
+                else {
+                    this.insertnode(root.left, newnode);
+                }
+            }
+            else {
+                if (root.right === null) {
+                    root.right = newnode;
+                }
+                else {
+                    this.insertnode(root.right, newnode);
+                }
+            }
+        }
+        // searchValue(root, val) {
+        //     if (root === null) {
+        //         return false;
+        //     }
+        //     else if (root.value = val) {
+        //         return true;
+        //     }
+            // else if (val < root.value) {
+            //     return this.searchValue(root.left, val);
+            // }
+            // else if (val > root.value) {
+            //     return this.searchValue(root.right, val);
+            // }
+            searchValue(root, val) {
+    if (root === null) {
+        return false;
+    } else if (root.value === val) {
+        return true;
+    } else if (val < root.value) {
+        return this.searchValue(root.left, val);
+    } else if (val > root.value) {
+        return this.searchValue(root.right, val);
+    }
+}
+
+
+        }
+    
+    let bst = new bstTree();
+    bst.makeTree(20);
+    bst.makeTree(10);
+    bst.makeTree(30);
+    console.log(bst.searchValue(bst.root, 10));
+    console.log(bst.isTreeEmpty());
+    console.log(bst);
+
+
+</script>
+
+</html>

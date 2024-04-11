@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revision</title>
+</head>
+
+<body>
+    <h1>implementing tree and linked list etc data strucure for revision</h1>
+</body>
+<script>
+    class List {
+        constructor(val) {
+            this.head = {
+                value: val,
+                next: null
+            }
+            this.tail = this.head
+            this.size = 0;
+        }
+
+        appendNode(data) {
+
+            let newNode = {
+                value: data,
+                next: null
+            }
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.size++;
+
+        }
+        traversing() {
+            let counter = 0;
+            let current = this.head;
+            while (counter < this.size) {
+                current = current.next;
+                counter++;
+                console.log(current);
+            }
+
+        }
+
+        insertNode(data, index) {
+            let counter = 0;
+            let current = this.head;
+            while (counter < index - 1) {
+                current = current.next;
+                counter++
+            }
+            let nextnode = current.next;
+            current.next = {
+                value: data,
+                next: nextnode
+            }
+            this.size++;
+
+        }
+        delete(index) {
+            if (index === 0) {
+                this.head = this.head.next;
+                this.size--;
+                return;
+            }
+
+            let counter = 0;
+            let current = this.head;
+            while (counter < index - 1) {
+                current = current.next;
+                counter++;
+            }
+            let temp = current.next.next;
+            current.next = temp;
+            this.size--;
+        }
+    }
+
+    let list = new List(10);
+    list.appendNode(20);
+    list.appendNode(30);
+    list.appendNode(40);
+    list.traversing();
+    list.insertNode(60, 2);
+    list.delete(0);
+    console.log(list);
+
+    //implement map in js 
+    class node {
+        constructor(val) {
+            this.value = val;
+            this.right = null;
+            this.left = null;
+        }
+    }
+    class Bstree {
+        constructor() {
+            this.root = null;
+        }
+        isTreeEmpty() {
+            if (this.root === null) {
+                return true;
+
+            }
+            else {
+                return false
+            }
+        }
+        makeTree(val) {
+            let newNode = new node(val);
+            if (this.root === null) {
+                this.root = newNode;
+            }
+            else {
+                this.insertNode(this.root, newNode);
+            }
+        }
+        insertNode(root, newNode) {
+            if (root.value > newNode.value) {
+                if (root.left === null) {
+                    root.left = newNode;
+                }
+                else {
+                    this.insertNode(root.left, newNode);
+                }
+
+            }
+            else {
+                if (root.right === null) {
+                    root.right = newNode;
+                }
+                else {
+                    this.insertNode(root.right, newNode);
+                }
+            }
+        }
+        search(root, val) {
+            if (root == null) {
+                return false;
+            }
+            else if (root.value == val) {
+                return true;
+            }
+            else if (root.value > val) {
+                return this.search(root.left, val);
+            }
+            else {
+                return this.search(root.right, val);
+            }
+        }
+
+    }
+
+
+
+    let bst = new Bstree();
+    bst.makeTree(20);
+    bst.makeTree(10);
+    bst.makeTree(30);
+    console.log(bst.isTreeEmpty());
+    console.log(bst.search(bst.root, 30));
+    console.log(bst);
+
+</script>
+
+</html>

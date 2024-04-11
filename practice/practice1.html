@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice binary tree</title>
+</head>
+<body>
+    <h1>binary tree implementation JavaScript</h1>
+    <p></p>
+</body>
+<script>
+    class node{
+        constructor(val){
+            this.val = val;
+            this.left =null;
+            this.right=null;
+        }
+      }
+      class Bstree{
+            constructor(){
+              this.root =null;
+          }
+          isTreeEmpty(){
+                return this.root === null;
+            }
+            makeTree(val){
+                let newnode = new node(val);
+                if(this.root === null){
+                    this.root = newnode;
+                }
+                else
+                {
+                    this.insertnode(this.root ,newnode)
+                }
+            }
+            insertnode(root,newnode){
+                if(root.value > newnode.value){
+                    if(root.left ==null){
+                        root.left = newnode;
+                    }
+                   else{
+                    this.insertnode(root.left ,newnode)
+                   }
+                  }
+                  else{
+                    if(root.right ==null){
+                        root.right = newnode;
+                    }
+                   else{
+                    this.insertnode(root.right ,newnode);
+                   }
+                  }
+              
+            }
+
+        }
+
+        let tree = new Bstree();
+        console.log(tree.isTreeEmpty())
+        tree.makeTree(20);
+        tree.makeTree(10);
+        tree.makeTree(5);
+        tree.maketree(11);
+        console.log(tree);
+</script>
+</html>
